@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Moonlight Mobile
+Comment=Stream games and other applications from another PC running Sunshine or GeForce Experience
+Exec=HAS_DESKTOP_ENVIRONMENT=false moonlight
+Icon=moonlight
+Terminal=false
+Type=Application
+Categories=Qt;Game;
+Keywords=nvidia;gamestream;stream;sunshine;remote play;
+X-Purism-FormFactor=Mobile;

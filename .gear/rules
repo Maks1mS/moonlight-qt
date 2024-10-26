@@ -1,2 +1,4 @@
 spec: .gear/moonlight-qt.spec
 tar: @name@
+copy: *.patch
+copy: .gear/com.moonlight_stream.Moonlight.mobile.desktop

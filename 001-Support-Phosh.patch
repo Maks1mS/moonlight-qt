@@ -1,0 +1,11 @@
+diff --color -Naur moonlight-qt.orig/app/gui/main.qml moonlight-qt/app/gui/main.qml
+--- moonlight-qt.orig/app/gui/main.qml	2024-10-26 19:42:50.368754943 +0300
++++ moonlight-qt/app/gui/main.qml	2024-10-26 19:42:04.216012574 +0300
+@@ -42,6 +42,7 @@
+                 window.show()
+             }
+         } else {
++            flags = Qt.Window | Qt.FramelessWindowHint
+             window.showFullScreen()
+         }
+ 

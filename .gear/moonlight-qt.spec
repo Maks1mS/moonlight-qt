@@ -11,6 +11,9 @@ Packager: Maxim Slipenko <no-reply@maxim.slipenko.com>
 
 # Source-url: https://github.com/moonlight-stream/%name/releases/download/v%version/MoonlightSrc-%version.tar.gz
 Source: %name-%version.tar
+Source1: com.moonlight_stream.Moonlight.mobile.desktop
+
+Patch0: 001-Support-Phosh.patch
 
 BuildRequires(pre): rpm-macros-qt6
 BuildRequires: qt6-tools
@@ -38,12 +41,16 @@ Requires: libqt6-quicklayouts
 %prep
 %setup
 
+%patch0 -p1
+
 %build
 %qmake_qt6 moonlight-qt.pro PREFIX=%prefix
 %make_build
 
 %install
 %makeinstall_std INSTALL_ROOT=%buildroot
+
+install -Dpm0644 %SOURCE1 %buildroot%_desktopdir/com.moonlight_stream.Moonlight.mobile.desktop
 
 %files
 %doc *.md
