@@ -27,6 +27,11 @@ BuildRequires: libswscale-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: libavcodec-devel
 
+Requires: libqt6-qmlworkerscript
+Requires: libqt6-quickcontrols2material
+Requires: libqt6-quickcontrols2basic
+Requires: libqt6-quicklayouts
+
 %description
 %summary
 
