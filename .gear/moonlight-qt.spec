@@ -15,6 +15,17 @@ Source: %name-%version.tar
 BuildRequires(pre): rpm-macros-qt6
 BuildRequires: qt6-tools
 BuildRequires: qt6-base-devel
+BuildRequires: libSDL2_ttf-devel
+BuildRequires: libopus-devel
+BuildRequires: qt6-declarative-devel
+BuildRequires: qt6-svg-devel
+BuildRequires: ffmpeg
+BuildRequires: libEGL-devel
+BuildRequires: libva-devel
+BuildRequires: libvdpau-devel
+BuildRequires: libswscale-devel
+BuildRequires: libxkbcommon-devel
+BuildRequires: libavcodec-devel
 
 %description
 %summary
@@ -23,19 +34,18 @@ BuildRequires: qt6-base-devel
 %setup
 
 %build
-%qmake_qt6
+%qmake_qt6 moonlight-qt.pro PREFIX=%prefix
 %make_build
 
 %install
-%makeinstall_std
-
-%check
-%make_build check
+%makeinstall_std INSTALL_ROOT=%buildroot
 
 %files
 %doc *.md
 %_bindir/*
-%_man1dir/*
+%_desktopdir/*
+%_iconsdir/*
+%_datadir/metainfo/*
 
 %changelog
 * Fri Oct 25 2024 Maxim Slipenko <no-reply@maxim.slipenko.com> 6.1.0-alt1
